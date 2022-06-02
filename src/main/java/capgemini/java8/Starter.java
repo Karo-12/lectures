@@ -34,6 +34,10 @@ public class Starter {
 
         LocalDate date = LocalDate.now();
         LocalDate date1 = date.plusMonths(1);
+
+        Employee employee = new Employee("Peter", 25);
+        // String name = employee.getName();
+        String name = employee.name();
     }
 }
 
@@ -52,3 +56,29 @@ interface Runner {
 
     }
 }
+
+record Employee(String name, int age) {
+}
+
+//@RequiredArgsConstructor
+//@Getter
+//class Employee {
+//    private final String name;
+//
+//    private final int age;
+
+//    public Employee(String name, int age) {
+//        this.name = name;
+//        this.age = age;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public int getAge() {
+//        return age;
+//    }
+
+
+//}
