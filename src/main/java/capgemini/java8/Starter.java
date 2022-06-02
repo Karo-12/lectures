@@ -37,7 +37,26 @@ public class Starter {
 
         Employee employee = new Employee("Peter", 25);
         // String name = employee.getName();
-        String name = employee.name();
+        //String name = employee.name();
+
+//        int arg = 1;
+//        switch (arg) {
+//            case 1: name = "one";break;
+//            case 2: name = "two";break;
+//            default: name = "N/A";
+//        }
+        int arg = 1;
+        String name = switch (arg) {
+            case 1 -> "one";
+            case 2 -> {
+                if (employee != null) {
+                    yield "two";
+                }
+                yield "three";
+            }
+            default -> "N/A";
+        };
+
     }
 }
 
