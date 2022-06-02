@@ -2,8 +2,8 @@ package capgemini.java8;
 
 public class Calculator {
 
-    public int sum(int x, int y) {
-        return x + y;
+    public long plus(int x, int y) {
+        return (long) x + y;
     }
 
     public int minus(int x, int y) {
@@ -12,3 +12,7 @@ public class Calculator {
 
     //TODO add multiple/divide
 }
+
+class ImprovedCalculator extends Calculator {
+}
+
