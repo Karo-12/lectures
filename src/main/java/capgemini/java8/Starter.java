@@ -7,7 +7,20 @@ import java.util.Optional;
 
 public class Starter {
 
+    private String sql = """
+            INSERT INTO Orders(
+            id,name)
+            VALUES(?,?)""";
+
     private int count;
+
+    private void process(Object value) {
+        if (value instanceof String text) {
+            int count = text.length();
+        } else if (value instanceof List elements) {
+            int count = elements.size();
+        }
+    }
 
     public static void main(String[] args) {
         var items = List.of("1", "2");
