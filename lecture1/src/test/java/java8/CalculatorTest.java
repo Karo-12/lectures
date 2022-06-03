@@ -1,4 +1,4 @@
-package capgemini.java8;
+package java8;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
