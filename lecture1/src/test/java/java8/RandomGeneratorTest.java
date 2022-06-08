@@ -26,11 +26,12 @@ public class RandomGeneratorTest {
         }
         int counterSame = 0;
         int counterDifference = 0;
-        int difference = 0;
+        int previousDifference = 0;
         for(int i = 0; i < maxValue-1; i++) {
             if(randomArray[i] == randomArray[i+1]) counterSame++;
-            if(difference == Math.abs(randomArray[i] - randomArray[i+1])) counterDifference++;
-            difference = Math.abs(randomArray[i] - randomArray[i+1]);
+            int difference = Math.abs(randomArray[i] - randomArray[i+1]);
+            if(previousDifference == difference) counterDifference++;
+            previousDifference = difference;
         }
         assertTrue(counterSame <(maxValue*0.01));
         assertTrue(counterDifference < (maxValue*0.01));
