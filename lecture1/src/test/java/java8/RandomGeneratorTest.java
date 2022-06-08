@@ -27,13 +27,18 @@ public class RandomGeneratorTest {
         int counterSame = 0;
         int counterDifference = 0;
         int previousDifference = 0;
+        int previousNumber = 0;
+        int previousSumCounter=0;
         for(int i = 0; i < maxValue-1; i++) {
-            if(randomArray[i] == randomArray[i+1]) counterSame++;
             int difference = Math.abs(randomArray[i] - randomArray[i+1]);
-            if(previousDifference == difference) counterDifference++;
+            if(randomArray[i] == randomArray[i+1]) counterSame++;
+            else if(previousDifference == difference) counterDifference++;
+            else if(previousNumber + randomArray[i] == randomArray[i+1]) previousSumCounter++;
             previousDifference = difference;
+            previousNumber = randomArray[i];
         }
         assertTrue(counterSame <(maxValue*0.01));
         assertTrue(counterDifference < (maxValue*0.01));
+        assertTrue(previousSumCounter < (maxValue*0.01));
     }
 }

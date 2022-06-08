@@ -12,8 +12,6 @@ public class RandomGenerator {
     private final Random random = new Random();
 
     public int generate(int max) {
-        //if(counter <= max) counter++;
-        //return counter;
         return random.nextInt(max);
     }
 }
